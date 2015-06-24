@@ -28,10 +28,10 @@ function addBenchmark(cfg, module, async, typeCast, name) {
 exports.getConfig = function (factor) {
   var cfg = {
     // Database connection settings
-    host: "127.0.0.1",
-    port: 3306,
-    user: "test",
-    password: "",
+    host: "192.168.99.100",
+    port: 32768,
+    user: "root",
+    password: "0000",
     database: "test",
     test_table: "test_table",
 
@@ -59,10 +59,6 @@ exports.getConfig = function (factor) {
   cfg.benchmarksO = {};
 
   //                module                  async  typeCast
-  addBenchmark(cfg, "C",                    false, false);
-  addBenchmark(cfg, "PHP",                  false, false);
-  addBenchmark(cfg, "mysql-libmysqlclient", true,  true,  "mysql-libmysqlclient");
-  addBenchmark(cfg, "mysql-libmysqlclient", false, true,  "mysql-libmysqlclient *");
   addBenchmark(cfg, "mariasql",             true,  false);
   addBenchmark(cfg, "mysql2",               true,  true,  "mysql2");
   addBenchmark(cfg, "mysql2",               true,  false, "mysql2 *");
